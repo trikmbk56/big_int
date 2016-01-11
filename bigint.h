@@ -1,4 +1,4 @@
-/*
+	/*
  * bigint.h - declaration of a simple implementation of BIG integers 
  * 
  * created: October 20, 2015
@@ -6,7 +6,7 @@
  * by Le Duc Phong
  *
  */
- #include<stdint.h>
+ #include <stdint.h>
  
  #define MAXSIZE	( 256 / 8 )	// = 32 bytes
  
@@ -14,7 +14,7 @@
  typedef uint16_t u16; 			// unsigned 16-bits integer 
  typedef uint32_t u32; 			// unsigned 32-bits integer 
  typedef uint64_t u64; 			// unsigned 64-bits integer 
- typedef uint128_t u128; 		// unsigned 64-bits integer 
+ //typedef uint128_t u128; 		// unsigned 64-bits integer 
  
  typedef struct bigint_st* BIGINT;
  
@@ -92,7 +92,7 @@ int BI_cmp_ui(const BIGINT op1, u64 op2);
 /* Compare the absolute values of op1 and op2. 
  * Return a positive value if abs(op1) > abs(op2), zero if abs(op1) = abs(op2), or a negative value if abs(op1) < abs(op2).
  */
-int BI_cmpabs(const BIGINT op1, const BIGINT op2)
+int BI_cmpabs(const BIGINT op1, const BIGINT op2);
 int BI_cmpabs_ui(const BIGINT op1, u64 op2);
 
 /* Return +1 if op > 0, 0 if op = 0, and -1 if op < 0. */
@@ -159,7 +159,7 @@ void BI_add_ui(BIGINT rop, const BIGINT op1, u64 op2);
 /* Set rop = op1 − op2 */
 void BI_sub(BIGINT rop, const BIGINT op1, const BIGINT op2);
 void BI_sub_ui(BIGINT rop, const BIGINT op1, u64 op2);
-void BI_ui_sub(BIGINT rop, u64 op1, const BIGINT op2)
+void BI_ui_sub(BIGINT rop, u64 op1, const BIGINT op2);
 
 /* Set rop = op1 x op2. */
 void BI_mul(BIGINT rop, const BIGINT op1, const BIGINT op2);
